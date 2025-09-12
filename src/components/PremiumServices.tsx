@@ -110,3 +110,5 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 export default Header;
         <div className="bg-gradient-to-r from-teal-600 via-green-500 to-orange-500 rounded-3xl p-12 text-white text-center relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-black/10"></div>
+  )
+}
