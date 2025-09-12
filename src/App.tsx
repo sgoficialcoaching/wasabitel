@@ -16,6 +16,7 @@ import AlarmForm from './components/AlarmForm';
 import CallRequestForm from './components/CallRequestForm';
 import LegalNotice from './components/LegalNotice';
 import CookiePolicy from './components/CookiePolicy';
+import CookiePopup from './components/CookiePopup';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -118,6 +119,8 @@ function App() {
       <PremiumServices onContactClick={openContactForm} />
       <SecurityServices onContactClick={openContactForm} onAlarmClick={openAlarmForm} />
       <Footer onCallRequestClick={openCallRequestForm} />
+      
+      <CookiePopup />
       
       <ContactForm 
         isOpen={showContactForm}
