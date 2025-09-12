@@ -1,104 +1,112 @@
 import React from 'react';
-import { Satellite, Globe, Shield } from 'lucide-react';
 
-interface PremiumServicesProps {
+interface HeaderProps {
   onContactClick: (service?: string) => void;
 }
 
-const PremiumServices: React.FC<PremiumServicesProps> = ({ onContactClick }) => {
-  const services = [
-    {
-      icon: <Satellite className="w-8 h-8" />,
-      title: 'Soporte 24/7',
-      serviceId: 'soporte-247',
-      description: 'Atención técnica especializada disponible las 24 horas del día, los 365 días del año para resolver cualquier incidencia.',
-      price: 'INCLUIDO',
-      buttonText: 'Más Información',
-      bgColor: 'bg-teal-100',
-      iconColor: 'text-teal-600',
-      buttonColor: 'bg-teal-600 hover:bg-teal-700'
-    },
-    {
-      icon: <Globe className="w-8 h-8" />,
-      title: 'Internet Satélite',
-      serviceId: 'internet-satelite',
-      description: 'Conexión por satélite de 200 Mbps para zonas rurales y de difícil acceso con cobertura nacional.',
-      price: '35€/mes',
-      buttonText: 'Contratar Ahora',
-      bgColor: 'bg-orange-100',
-      iconColor: 'text-orange-600',
-      buttonColor: 'bg-orange-500 hover:bg-orange-600'
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Instalación Premium',
-      serviceId: 'instalacion-premium',
-      description: 'Servicio de instalación profesional con garantía extendida y configuración personalizada de todos los equipos.',
-      price: 'GRATUITO',
-      buttonText: 'Ver Detalles',
-      bgColor: 'bg-teal-100',
-      iconColor: 'text-teal-600',
-      buttonColor: 'bg-teal-600 hover:bg-teal-700'
+const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-  ];
+  };
 
   return (
-    <section id="servicios" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Servicios <span className="text-gray-600">Premium</span>
-          </h2>
-          <p className="text-xl text-gray-600">
-            Servicios adicionales para mejorar tu experiencia de conectividad
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-              <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 ${service.iconColor}`}>
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                {service.description}
-              </p>
-              <div className="text-2xl font-bold text-gray-900 mb-4">
-                {service.price}
-              </div>
-              <button onClick={() => onContactClick(service.serviceId)} className={`w-full ${service.buttonColor} text-white py-3 rounded-lg font-medium transition-colors`}>
-                {service.buttonText}
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Satellite Internet Banner */}
-        <div className="bg-gradient-to-r from-teal-600 to-orange-500 rounded-2xl p-8 text-white text-center">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">Internet por Satélite Rural</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
-              <div className="flex items-center justify-center space-x-2">
-                <Satellite className="w-6 h-6" />
-                <span className="font-medium">COBERTURA COMPLETA</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <Globe className="w-6 h-6" />
-                <span className="font-medium">100% COBERTURA</span>
-              </div>
-              <div className="flex items-center justify-center space-x-2">
-                <Shield className="w-6 h-6" />
-                <span className="font-medium">INSTALACIÓN INCLUIDA</span>
-              </div>
-            </div>
-          </div>
+    <>
+      {/* Promotional Bar */}
+      <div className="bg-gradient-to-r from-green-500 via-teal-500 to-orange-500 text-white py-3 px-4 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
+          <span className="animate-pulse">🔥</span>
+          <span>PROMOCIONES EXCLUSIVAS SOLO PARA CLIENTES WASABITEL</span>
+          <span className="animate-pulse">🔥</span>
+          <span className="hidden sm:inline ml-4 bg-white/20 px-3 py-1 rounded-full text-xs">
+            ¡APROVECHA AHORA!
+          </span>
         </div>
       </div>
-    </section>
+      
+      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
+      {/* Promotional Bar */}
+      <div className="bg-gradient-to-r from-green-500 via-teal-500 to-orange-500 text-white py-3 px-4 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
+          <span className="animate-pulse">🔥</span>
+          <span>PROMOCIONES EXCLUSIVAS SOLO PARA CLIENTES WASABITEL</span>
+          <span className="animate-pulse">🔥</span>
+          <span className="hidden sm:inline ml-4 bg-white/20 px-3 py-1 rounded-full text-xs">
+            ¡APROVECHA AHORA!
+          </span>
+        </div>
+      </div>
+      
+      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-1">
+          <div className="flex items-center">
+            <div className="flex items-center space-x-2">
+              <img 
+                src="/Etna_Sans_Serif__1_-removebg-preview.png" 
+                alt="WasabiTel Logo"
+                className="w-48 h-48 object-contain"
+              />
+            </div>
+          </div>
+          
+          <nav className="hidden md:flex space-x-8">
+            <button onClick={() => scrollToSection('fibra')} className="text-gray-700 hover:text-green-600 font-bold transition-all duration-300 hover:scale-105 relative group">
+              Fibra
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection('movil')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-105 relative group">
+              Móvil
+              Servicios
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection('seguridad')} className="text-gray-700 hover:text-red-600 font-bold transition-all duration-300 hover:scale-110 relative group">
+              Seguridad
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection('empresa')} className="text-gray-700 hover:text-teal-600 font-bold transition-all duration-300 hover:scale-110 relative group">
+            <h3 className="text-4xl font-bold mb-6 relative z-10">Internet por Satélite Rural</h3>
+            <p className="text-xl mb-8 opacity-90 relative z-10">Conectividad de alta velocidad donde otros no llegan</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="flex flex-col items-center space-y-3 relative z-10">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <Satellite className="w-8 h-8" />
+                </div>
+                <span className="font-bold text-lg">COBERTURA COMPLETA</span>
+                <span className="text-sm opacity-80">Llega donde la fibra no puede</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+              <div className="flex flex-col items-center space-y-3 relative z-10">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <Globe className="w-8 h-8" />
+                </div>
+                <span className="font-bold text-lg">200 MBPS</span>
+                <span className="text-sm opacity-80">Velocidad garantizada</span>
+          <div className="flex items-center space-x-4">
+              <div className="flex flex-col items-center space-y-3 relative z-10">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <Shield className="w-8 h-8" />
+                </div>
+                <span className="font-bold text-lg">INSTALACIÓN INCLUIDA</span>
+                <span className="text-sm opacity-80">Sin costes adicionales</span>
+            </button>
+          </div>
+            <button className="bg-white text-teal-600 hover:text-orange-500 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative z-10">
+              Consultar Disponibilidad
+            </button>
+        </div>
+      </div>
+    </header>
+    </>
   );
 };
 
-export default PremiumServices;
+export default Header;
+        <div className="bg-gradient-to-r from-teal-600 via-green-500 to-orange-500 rounded-3xl p-12 text-white text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 bg-black/10"></div>

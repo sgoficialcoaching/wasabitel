@@ -1,335 +1,112 @@
+                    <span className="text-gray-700 font-medium">Llamadas nacionales ilimitadas</span>
 import React from 'react';
-import { Check, Tv } from 'lucide-react';
 
-interface FiberPlansProps {
-  onContactClick: (service?: string) => void;
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+                    <span className="text-gray-700 font-medium">Soporte técnico</span>
 }
 
-const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
-  const plans = [
-    {
-      name: '600M',
-      price: '24,95€',
-      speed: '600M',
-      serviceId: 'fibra-600',
-      features: [
-        'Fibra hasta 600 Mb',
-        'Instalación gratuita',
-        'Router WiFi incluido', 
-        'Llamadas nacionales ilimitadas',
-        'Soporte técnico'
-      ],
-      buttonText: 'Contratar Ahora',
-      popular: false,
-      color: 'teal',
-      badge: 'Fibra Más Orange'
-    },
-    {
-      name: '1000M',
-      price: '32,95€',
-      speed: '1000M',
-      serviceId: 'fibra-1000',
-      features: [
-        'Fibra hasta 1000 Mb',
-        'Instalación gratuita',
-        'Router WiFi incluido',
-        'Llamadas nacionales ilimitadas', 
-        'Soporte técnico'
-      ],
-      buttonText: 'Contratar Ahora',
-      popular: true,
-      color: 'orange',
-      badge: 'Fibra Más Orange'
+const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
+                <button onClick={() => onContactClick('fibra-1000-movistar')} className="w-full bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-  ];
-
-  const tvPlans = [
-    {
-      name: 'TV Básica',
-      price: '30€',
-      serviceId: 'tv-basica',
-      features: [
-        'Canales básicos nacionales',
-        'Grabación en la nube',
-        'Acceso desde móvil',
-        'Calidad HD'
-      ],
-      color: 'purple'
-    },
-    {
-      name: 'TV Inicial',
-      price: '50€',
-      serviceId: 'tv-inicial',
-      features: [
-        'Más de 100 canales',
-        'Canales temáticos',
-        'Grabación en la nube',
-        'Acceso multidispositivo'
-      ],
-      color: 'purple'
-    },
-    {
-      name: 'TV Premium',
-      price: '60€',
-      serviceId: 'tv-premium',
-      features: [
-        'Canales premium incluidos',
-        'Deportes y películas',
-        'Series exclusivas',
-        'Calidad 4K disponible'
-      ],
-      color: 'purple'
-    },
-    {
-      name: 'TV Premium Plus',
-      price: '90€',
-      serviceId: 'tv-premium-plus',
-      features: [
-        'Todos los canales premium',
-        'Deportes en exclusiva',
-        'Estrenos cinematográficos',
-        'Contenido internacional'
-      ],
-      color: 'purple',
-      gradient: true
-    },
-    {
-      name: 'TV Total',
-      price: '90€',
-      serviceId: 'tv-total',
-      features: [
-        'Paquete completo de canales',
-        'Todas las plataformas incluidas',
-        'Contenido bajo demanda',
-        'Experiencia premium total'
-      ],
-      color: 'purple',
-      gradient: true
-    }
-  ];
+  };
 
   return (
-    <section id="fibra" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Planes de <span className="text-orange-500">Fibra Óptica</span>
-          </h2>
-          <p className="text-xl text-gray-600">
-            Velocidad, estabilidad y el mejor precio garantizado del mercado
-          </p>
-          <div className="mt-6">
-            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
-              ✓ Promoción Fibra Más Orange - Descuento 5€
-            </span>
-          </div>
-        </div>
-
-        {/* Main Plans - Fibra MásOrange */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {plans.map((plan, index) => (
-            <div key={index} className={`relative bg-white rounded-2xl shadow-xl overflow-hidden ${plan.popular ? 'ring-2 ring-orange-500' : ''}`}>
-              {plan.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-orange-500 text-white text-center py-2 text-sm font-medium">
-                  Más Popular
-                </div>
-              )}
-              
-              <div className={`${plan.color === 'teal' ? 'bg-teal-600' : 'bg-orange-500'} text-white p-6 ${plan.popular ? 'pt-12' : ''}`}>
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold mb-1">{plan.price}</div>
-                  <div className="text-sm opacity-90">mes</div>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="space-y-4 mb-6">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center">
-                      <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <button onClick={() => onContactClick(plan.serviceId)} className={`w-full ${plan.color === 'teal' ? 'bg-teal-600 hover:bg-teal-700' : 'bg-orange-500 hover:bg-orange-600'} text-white py-3 rounded-lg font-medium transition-colors`}>
-                  {plan.buttonText}
-                </button>
-              </div>
+            <div className="inline-flex items-center bg-purple-100 text-purple-800 px-6 py-3 rounded-full text-sm font-bold mb-4">
+              <Tv className="w-4 h-4 mr-2" />
+              Entretenimiento premium
             </div>
-          ))}
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">MásMedia TV</span> - Paquetes de Televisión
+      <div className="bg-gradient-to-r from-green-500 via-teal-500 to-orange-500 text-white py-3 px-4 text-center relative overflow-hidden">
+            <p className="text-gray-600 text-lg">Disfruta del mejor contenido televisivo con nuestros paquetes premium</p>
+        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
+          <span className="animate-pulse">🔥</span>
+          <span>PROMOCIONES EXCLUSIVAS SOLO PARA CLIENTES WASABITEL</span>
+          <span className="animate-pulse">🔥</span>
+          <span className="hidden sm:inline ml-4 bg-white/20 px-3 py-1 rounded-full text-xs">
+              <div key={index} className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 ring-1 ring-gray-200">
+                <div className="bg-gradient-to-br from-purple-600 to-purple-800 text-white p-8 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-black/10"></div>
         </div>
-
-        {/* Fibra Movistar Plans */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Fibra Movistar</h3>
-            <p className="text-gray-600">Mismas velocidades, mismos precios con tecnología Movistar</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="bg-blue-600 text-white p-6">
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">600M</h3>
-                  <div className="text-4xl font-bold mb-1">24,95€</div>
-                  <div className="text-sm opacity-90">mes</div>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Fibra hasta 600 Mb</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Instalación gratuita</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Router WiFi incluido</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Llamadas nacionales ilimitadas</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Soporte técnico</span>
-                  </div>
-                </div>
-                
-                <button onClick={() => onContactClick('fibra-600-movistar')} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                  Contratar Ahora
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="bg-blue-700 text-white p-6">
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">1000M</h3>
-                  <div className="text-4xl font-bold mb-1">32,95€</div>
-                  <div className="text-sm opacity-90">mes</div>
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Fibra hasta 1000 Mb</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Instalación gratuita</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Router WiFi incluido</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Llamadas nacionales ilimitadas</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Soporte técnico</span>
-                  </div>
-                </div>
-                
-                <button onClick={() => onContactClick('fibra-1000-movistar')} className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg font-medium transition-colors">
-                  Contratar Ahora
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* MásMedia TV Plans */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              <span className="text-purple-600">MásMedia TV</span> - Paquetes de Televisión
-            </h3>
-            <p className="text-gray-600">Disfruta del mejor contenido televisivo con nuestros paquetes premium</p>
-          </div>
-          
-          {/* First row - 3 plans */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {tvPlans.slice(0, 3).map((plan, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="bg-purple-600 text-white p-6">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Tv className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                    <div className="text-4xl font-bold mb-1">{plan.price}</div>
-                    <div className="text-sm opacity-90">mes</div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="space-y-4 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center">
-                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <button onClick={() => onContactClick(plan.serviceId)} className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-medium transition-colors">
-                    Contratar Ahora
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Second row - 2 premium plans */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {tvPlans.slice(3, 5).map((plan, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden ring-2 ring-purple-500">
-                <div className="absolute top-0 left-0 right-0 bg-purple-500 text-white text-center py-2 text-sm font-medium">
-                  Paquete Premium
-                </div>
-                <div className={`${plan.gradient ? 'bg-gradient-to-br from-purple-600 to-purple-800' : 'bg-purple-700'} text-white p-6 pt-12`}>
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Tv className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                    <div className="text-4xl font-bold mb-1">{plan.price}</div>
-                    <div className="text-sm opacity-90">mes</div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="space-y-4 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center">
-                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <button onClick={() => onContactClick(plan.serviceId)} className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white py-3 rounded-lg font-medium transition-colors">
-                    Contratar Ahora
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+                      <Tv className="w-8 h-8" />
+      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
+                    <h3 className="text-2xl font-bold mb-3 relative z-10">{plan.name}</h3>
+                    <div className="text-5xl font-bold mb-2 relative z-10">{plan.price}</div>
+                    <div className="text-lg opacity-90 font-medium relative z-10">/mes</div>
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 ring-1 ring-gray-200">
+        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 relative overflow-hidden">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-3 relative z-10">600M</h3>
+                <div className="absolute inset-0 bg-black/10"></div>
+                  <div className="text-5xl font-bold mb-2 relative z-10">24,95€</div>
+                        <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+                        <span className="text-gray-700 font-medium">{feature}</span>
       </div>
-    </section>
-  );
-};
+      
+      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
+              <div className="p-8">
+                  <button onClick={() => onContactClick(plan.serviceId)} className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+          <div className="flex items-center">
+                    <span className="text-gray-700 font-medium">Fibra hasta 600 Mb</span>
+                src="/Etna_Sans_Serif__1_-removebg-preview.png" 
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+                alt="WasabiTel Logo"
+                    <span className="text-gray-700 font-medium">Instalación gratuita</span>
+            </div>
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+          </div>
+              <div key={index} className="bg-white rounded-3xl shadow-2xl overflow-hidden ring-4 ring-purple-500 hover:shadow-3xl transition-all duration-500 transform hover:scale-105 relative">
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-3 text-sm font-bold">
+                  ⭐ PAQUETE PREMIUM ⭐
+              Fibra
+                <div className={`${plan.gradient ? 'bg-gradient-to-br from-purple-600 to-pink-600' : 'bg-gradient-to-br from-purple-700 to-purple-900'} text-white p-8 pt-16 relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/10"></div>
+            <button onClick={() => scrollToSection('movil')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-105 relative group">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+                      <Tv className="w-8 h-8" />
+                    <span className="text-gray-700 font-medium">Soporte técnico</span>
+                    <h3 className="text-2xl font-bold mb-3 relative z-10">{plan.name}</h3>
+                    <div className="text-5xl font-bold mb-2 relative z-10">{plan.price}</div>
+                    <div className="text-lg opacity-90 font-medium relative z-10">/mes</div>
+                <button onClick={() => onContactClick('fibra-600-movistar')} className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              Seguridad
+            </button>
+                <div className="p-8">
+              Empresa
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 ring-1 ring-gray-200">
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+                        <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+                        <span className="text-gray-700 font-medium">{feature}</span>
+                  <h3 className="text-2xl font-bold mb-3 relative z-10">1000M</h3>
+                <div className="absolute inset-0 bg-black/10"></div>
+                  <div className="text-5xl font-bold mb-2 relative z-10">32,95€</div>
+          
+                  <button onClick={() => onContactClick(plan.serviceId)} className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <button onClick={() => onContactClick(plan.serviceId)} className={`w-full ${plan.color === 'teal' ? 'bg-gradient-to-r from-teal-600 to-teal-800 hover:from-teal-700 hover:to-teal-900' : 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600'} text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}>
+            <button onClick={() => scrollToSection('login')} className="text-gray-700 hover:text-teal-600 font-bold transition-all duration-300 hover:scale-105">Iniciar Sesión</button>
+            <button onClick={() => onContactClick()} className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+              <div className="p-8">
+              Contratar Ahora
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+          </div>
+                    <span className="text-gray-700 font-medium">Fibra hasta 1000 Mb</span>
+    </header>
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+    </>
+                    <span className="text-gray-700 font-medium">Instalación gratuita</span>
 
-export default FiberPlans;
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+export default Header;
+                    <span className="text-gray-700 font-medium">Router WiFi incluido</span>
+              Tecnología Movistar
+                    <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+            </div>
