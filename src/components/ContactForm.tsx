@@ -31,6 +31,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose, selectedServ
     { value: 'movil-400gb', label: 'Móvil 400GB - 24,95€/mes', icon: <Smartphone className="w-4 h-4" /> },
     { value: 'seguridad', label: 'Servicios de Seguridad', icon: <Shield className="w-4 h-4" /> },
     { value: 'internet-satelite', label: 'Internet Satélite - 35€/mes', icon: <Wifi className="w-4 h-4" /> },
+    { value: 'tv-basica', label: 'MásMedia TV Básica - 30€/mes', icon: <Check className="w-4 h-4" /> },
+    { value: 'tv-inicial', label: 'MásMedia TV Inicial - 50€/mes', icon: <Check className="w-4 h-4" /> },
+    { value: 'tv-premium-60', label: 'MásMedia TV Premium - 60€/mes', icon: <Check className="w-4 h-4" /> },
+    { value: 'tv-premium-90', label: 'MásMedia TV Premium Plus - 90€/mes', icon: <Check className="w-4 h-4" /> },
+    { value: 'tv-total', label: 'MásMedia TV Total - 90€/mes', icon: <Check className="w-4 h-4" /> },
     { value: 'combo', label: 'Paquete Completo', icon: <Check className="w-4 h-4" /> }
   ];
 

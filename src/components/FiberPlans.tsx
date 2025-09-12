@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, Tv } from 'lucide-react';
 
 interface FiberPlansProps {
   onContactClick: (service?: string) => void;
@@ -43,32 +43,68 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
     }
   ];
 
-  const additionalPlans = [
+  const tvPlans = [
     {
-      name: '600M',
-      price: '24,95€',
-      speed: '600M',
-      serviceId: 'fibra-600-movistar',
+      name: 'TV Básica',
+      price: '30€',
+      serviceId: 'tv-basica',
       features: [
-        'Fibra hasta 600 Mb',
-        'Instalación gratuita',
-        'Router WiFi incluido',
-        'Llamadas nacionales ilimitadas'
+        'Canales básicos nacionales',
+        'Grabación en la nube',
+        'Acceso desde móvil',
+        'Calidad HD'
       ],
-      color: 'teal'
+      color: 'purple'
     },
     {
-      name: '1000M',
-      price: '32,95€',
-      speed: '1000M',
-      serviceId: 'fibra-1000-movistar',
+      name: 'TV Inicial',
+      price: '50€',
+      serviceId: 'tv-inicial',
       features: [
-        'Fibra hasta 1000 Mb',
-        'Instalación gratuita',
-        'Router WiFi incluido',
-        'Llamadas nacionales ilimitadas'
+        'Más de 100 canales',
+        'Canales temáticos',
+        'Grabación en la nube',
+        'Acceso multidispositivo'
       ],
-      color: 'orange'
+      color: 'purple'
+    },
+    {
+      name: 'TV Premium',
+      price: '60€',
+      serviceId: 'tv-premium',
+      features: [
+        'Canales premium incluidos',
+        'Deportes y películas',
+        'Series exclusivas',
+        'Calidad 4K disponible'
+      ],
+      color: 'purple'
+    },
+    {
+      name: 'TV Premium Plus',
+      price: '90€',
+      serviceId: 'tv-premium-plus',
+      features: [
+        'Todos los canales premium',
+        'Deportes en exclusiva',
+        'Estrenos cinematográficos',
+        'Contenido internacional'
+      ],
+      color: 'purple',
+      gradient: true
+    },
+    {
+      name: 'TV Total',
+      price: '90€',
+      serviceId: 'tv-total',
+      features: [
+        'Paquete completo de canales',
+        'Todas las plataformas incluidas',
+        'Contenido bajo demanda',
+        'Experiencia premium total'
+      ],
+      color: 'purple',
+      gradient: true
     }
   ];
 
@@ -89,7 +125,7 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
           </div>
         </div>
 
-        {/* Main Plans */}
+        {/* Main Plans - Fibra MásOrange */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {plans.map((plan, index) => (
             <div key={index} className={`relative bg-white rounded-2xl shadow-xl overflow-hidden ${plan.popular ? 'ring-2 ring-orange-500' : ''}`}>
@@ -126,7 +162,7 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
         </div>
 
         {/* Fibra Movistar Plans */}
-        <div className="mb-12">
+        <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Fibra Movistar</h3>
             <p className="text-gray-600">Mismas velocidades, mismos precios con tecnología Movistar</p>
@@ -210,6 +246,85 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* MásMedia TV Plans */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <span className="text-purple-600">MásMedia TV</span> - Paquetes de Televisión
+            </h3>
+            <p className="text-gray-600">Disfruta del mejor contenido televisivo con nuestros paquetes premium</p>
+          </div>
+          
+          {/* First row - 3 plans */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {tvPlans.slice(0, 3).map((plan, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="bg-purple-600 text-white p-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Tv className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                    <div className="text-4xl font-bold mb-1">{plan.price}</div>
+                    <div className="text-sm opacity-90">mes</div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="space-y-4 mb-6">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center">
+                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <button onClick={() => onContactClick(plan.serviceId)} className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-medium transition-colors">
+                    Contratar Ahora
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row - 2 premium plans */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {tvPlans.slice(3, 5).map((plan, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden ring-2 ring-purple-500">
+                <div className="absolute top-0 left-0 right-0 bg-purple-500 text-white text-center py-2 text-sm font-medium">
+                  Paquete Premium
+                </div>
+                <div className={`${plan.gradient ? 'bg-gradient-to-br from-purple-600 to-purple-800' : 'bg-purple-700'} text-white p-6 pt-12`}>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Tv className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                    <div className="text-4xl font-bold mb-1">{plan.price}</div>
+                    <div className="text-sm opacity-90">mes</div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="space-y-4 mb-6">
+                    {plan.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center">
+                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <button onClick={() => onContactClick(plan.serviceId)} className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white py-3 rounded-lg font-medium transition-colors">
+                    Contratar Ahora
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
