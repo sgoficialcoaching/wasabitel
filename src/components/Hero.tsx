@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                   <div className="flex items-center space-x-2">
                     <Wifi className="w-5 h-5 text-teal-600" />
                     <div>
-                      <div className="font-semibold text-gray-900">Fibra 1000Mb</div>
+                      <div className="font-semibold text-gray-900">Fibra 1000M</div>
                       <div className="text-sm text-gray-600">Velocidad simétrica</div>
                     </div>
                   </div>

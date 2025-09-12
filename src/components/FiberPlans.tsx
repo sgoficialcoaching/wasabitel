@@ -8,12 +8,12 @@ interface FiberPlansProps {
 const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
   const plans = [
     {
-      name: '100M',
+      name: '600M',
       price: '24,95€',
-      speed: '100M',
-      serviceId: 'fibra-100',
+      speed: '600M',
+      serviceId: 'fibra-600',
       features: [
-        'Fibra hasta 100 Mb',
+        'Fibra hasta 600 Mb',
         'Instalación gratuita',
         'Router WiFi incluido', 
         'Llamadas nacionales ilimitadas',
@@ -25,12 +25,12 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
       badge: 'Fibra Más Orange'
     },
     {
-      name: '300M',
+      name: '1000M',
       price: '32,95€',
-      speed: '300M',
-      serviceId: 'fibra-300',
+      speed: '1000M',
+      serviceId: 'fibra-1000',
       features: [
-        'Fibra hasta 300 Mb',
+        'Fibra hasta 1000 Mb',
         'Instalación gratuita',
         'Router WiFi incluido',
         'Llamadas nacionales ilimitadas', 
@@ -45,12 +45,12 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
 
   const additionalPlans = [
     {
-      name: '1000M',
-      price: '9,95€',
-      speed: '1000M',
-      serviceId: 'fibra-1000',
+      name: '600M',
+      price: '24,95€',
+      speed: '600M',
+      serviceId: 'fibra-600-movistar',
       features: [
-        'Fibra hasta 1000 Mb',
+        'Fibra hasta 600 Mb',
         'Instalación gratuita',
         'Router WiFi incluido',
         'Llamadas nacionales ilimitadas'
@@ -58,25 +58,12 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
       color: 'teal'
     },
     {
-      name: '600M',
-      price: '7,95€',
-      speed: '600M',
-      serviceId: 'fibra-600',
+      name: '1000M',
+      price: '32,95€',
+      speed: '1000M',
+      serviceId: 'fibra-1000-movistar',
       features: [
-        'Fibra hasta 600 Mb',
-        'Instalación gratuita',
-        'Router WiFi incluido',
-        'Llamadas nacionales ilimitadas'
-      ],
-      color: 'orange'
-    },
-    {
-      name: '300M',
-      price: '10,95€',
-      speed: '300M',
-      serviceId: 'fibra-300-alt',
-      features: [
-        'Fibra hasta 300 Mb',
+        'Fibra hasta 1000 Mb',
         'Instalación gratuita',
         'Router WiFi incluido',
         'Llamadas nacionales ilimitadas'
@@ -145,7 +132,7 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="bg-teal-600 text-white p-6">
                 <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">300M</h3>
+                  <h3 className="text-xl font-bold mb-2">600M</h3>
                   <div className="text-4xl font-bold mb-1">24,95€</div>
                   <div className="text-sm opacity-90">mes</div>
                 </div>
@@ -154,7 +141,7 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center">
                     <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Fibra hasta 300 Mb</span>
+                    <span className="text-gray-700">Fibra hasta 600 Mb</span>
                   </div>
                   <div className="flex items-center">
                     <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
@@ -169,7 +156,7 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
                     <span className="text-gray-700">Llamadas nacionales ilimitadas</span>
                   </div>
                 </div>
-                <button onClick={() => onContactClick('fibra-300-movistar')} className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-lg font-medium transition-colors">
+                <button onClick={() => onContactClick('fibra-600-movistar')} className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-lg font-medium transition-colors">
                   Contratar Ahora
                 </button>
               </div>
@@ -211,7 +198,7 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
         </div>
 
         {/* Additional Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {additionalPlans.map((plan, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className={`${plan.color === 'teal' ? 'bg-teal-600' : 'bg-orange-500'} text-white p-4 text-center`}>

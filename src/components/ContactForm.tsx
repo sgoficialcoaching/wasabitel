@@ -22,12 +22,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose, selectedServ
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
-    { value: 'fibra-100', label: 'Fibra 100M - 24,95€/mes', icon: <Wifi className="w-4 h-4" /> },
-    { value: 'fibra-300', label: 'Fibra 300M - 32,95€/mes', icon: <Wifi className="w-4 h-4" /> },
+    { value: 'fibra-600', label: 'Fibra 600M - 24,95€/mes', icon: <Wifi className="w-4 h-4" /> },
     { value: 'fibra-1000', label: 'Fibra 1000M - 32,95€/mes', icon: <Wifi className="w-4 h-4" /> },
     { value: 'movil-30gb', label: 'Móvil 30GB - 6,95€/mes', icon: <Smartphone className="w-4 h-4" /> },
     { value: 'movil-120gb', label: 'Móvil 120GB - 10,95€/mes', icon: <Smartphone className="w-4 h-4" /> },
+    { value: 'movil-200gb', label: 'Móvil 200GB - 14,95€/mes', icon: <Smartphone className="w-4 h-4" /> },
+    { value: 'movil-300gb', label: 'Móvil 300GB - 19,95€/mes', icon: <Smartphone className="w-4 h-4" /> },
+    { value: 'movil-400gb', label: 'Móvil 400GB - 24,95€/mes', icon: <Smartphone className="w-4 h-4" /> },
     { value: 'seguridad', label: 'Servicios de Seguridad', icon: <Shield className="w-4 h-4" /> },
+    { value: 'internet-satelite', label: 'Internet Satélite - 35€/mes', icon: <Wifi className="w-4 h-4" /> },
     { value: 'combo', label: 'Paquete Completo', icon: <Check className="w-4 h-4" /> }
   ];
 
