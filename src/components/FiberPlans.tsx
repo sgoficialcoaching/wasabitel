@@ -125,6 +125,93 @@ const FiberPlans: React.FC<FiberPlansProps> = ({ onContactClick }) => {
           ))}
         </div>
 
+        {/* Fibra Movistar Plans */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Fibra Movistar</h3>
+            <p className="text-gray-600">Mismas velocidades, mismos precios con tecnología Movistar</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-blue-600 text-white p-6">
+                <div className="text-center">
+                  <h3 className="text-xl font-bold mb-2">600M</h3>
+                  <div className="text-4xl font-bold mb-1">24,95€</div>
+                  <div className="text-sm opacity-90">mes</div>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Fibra hasta 600 Mb</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Instalación gratuita</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Router WiFi incluido</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Llamadas nacionales ilimitadas</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Soporte técnico</span>
+                  </div>
+                </div>
+                
+                <button onClick={() => onContactClick('fibra-600-movistar')} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
+                  Contratar Ahora
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="bg-blue-700 text-white p-6">
+                <div className="text-center">
+                  <h3 className="text-xl font-bold mb-2">1000M</h3>
+                  <div className="text-4xl font-bold mb-1">32,95€</div>
+                  <div className="text-sm opacity-90">mes</div>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Fibra hasta 1000 Mb</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Instalación gratuita</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Router WiFi incluido</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Llamadas nacionales ilimitadas</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">Soporte técnico</span>
+                  </div>
+                </div>
+                
+                <button onClick={() => onContactClick('fibra-1000-movistar')} className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg font-medium transition-colors">
+                  Contratar Ahora
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
