@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-800/90 to-gray-900/90"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2 sm:py-4">
           {/* Logo Section - Exactly like WasabiEnergía */}
           <div className="flex items-center">
             <div className="relative group cursor-pointer scale-105 transition-all duration-300">
@@ -46,11 +46,11 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
               <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-xl blur-lg opacity-100 transition-all duration-300"></div>
               
               {/* Logo container */}
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl px-6 py-2 border border-teal-400/50 transition-all duration-300 shadow-lg">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl px-3 py-1 sm:px-6 sm:py-2 border border-teal-400/50 transition-all duration-300 shadow-lg">
                 <img 
                   src="/Etna_Sans_Serif__1_-removebg-preview.png" 
                   alt="WasabiTel Logo"
-                  className="w-24 h-24 object-contain transition-all duration-300 brightness-110 relative z-10"
+                  className="w-16 h-16 sm:w-24 sm:h-24 object-contain transition-all duration-300 brightness-110 relative z-10"
                 />
               </div>
             </div>
