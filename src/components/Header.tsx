@@ -41,16 +41,16 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
         <div className="flex justify-between items-center py-4">
           {/* Logo Section - Exactly like WasabiEnergía */}
           <div className="flex items-center">
-            <div className="relative group cursor-pointer hover:scale-105 transition-all duration-300">
+            <div className="relative group cursor-pointer scale-105 transition-all duration-300">
               {/* Simple glow effect */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-xl blur-lg opacity-100 transition-all duration-300"></div>
               
               {/* Logo container */}
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl px-6 py-2 border border-white/20 group-hover:border-teal-400/50 transition-all duration-300 shadow-lg">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl px-6 py-2 border border-teal-400/50 transition-all duration-300 shadow-lg">
                 <img 
                   src="/Etna_Sans_Serif__1_-removebg-preview.png" 
                   alt="WasabiTel Logo"
-                  className="w-24 h-24 object-contain transition-all duration-300 group-hover:brightness-110 relative z-10"
+                  className="w-24 h-24 object-contain transition-all duration-300 brightness-110 relative z-10"
                 />
               </div>
             </div>
