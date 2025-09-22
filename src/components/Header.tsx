@@ -67,12 +67,6 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
                   className="w-24 h-24 object-contain transition-all duration-500 group-hover:brightness-125 group-hover:contrast-110 group-hover:saturate-150 relative z-10 group-hover:drop-shadow-lg"
                 />
                 
-                {/* Animated text below logo */}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-pulse">
-                  <span className="text-xs font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent whitespace-nowrap">
-                    TELECOMUNICACIONES
-                  </span>
-                </div>
               </div>
             </div>
           </div>
