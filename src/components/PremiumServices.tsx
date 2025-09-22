@@ -1,7 +1,11 @@
 import React from 'react';
 import { Satellite, Globe, Shield } from 'lucide-react';
 
-const PremiumServices: React.FC = () => {
+interface PremiumServicesProps {
+  onContactClick: (service?: string) => void;
+}
+
+const PremiumServices: React.FC<PremiumServicesProps> = ({ onContactClick }) => {
   return (
     <section className="py-20 bg-gradient-to-br from-teal-50 to-green-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +52,10 @@ const PremiumServices: React.FC = () => {
               </div>
             </div>
             
-            <button className="bg-white text-teal-600 hover:text-orange-500 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button 
+              onClick={() => onContactClick('internet-satelite')}
+              className="bg-white text-teal-600 hover:text-orange-500 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
               Consultar Disponibilidad
             </button>
           </div>

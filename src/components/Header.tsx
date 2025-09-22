@@ -50,7 +50,6 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             </button>
             <button onClick={() => scrollToSection('movil')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-105 relative group">
               Móvil
-              Servicios
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button onClick={() => scrollToSection('seguridad')} className="text-gray-700 hover:text-red-600 font-bold transition-all duration-300 hover:scale-110 relative group">
@@ -74,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             </button>
           </div>
         </div>
-      </div>
+      </header>
     </header>
     </>
   );
