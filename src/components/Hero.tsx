@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 via-teal-50/30 to-orange-50/30 py-20 relative overflow-hidden particles-bg">
+    <section className="bg-gradient-to-br from-gray-50 via-teal-50/30 to-orange-50/30 pt-32 pb-20 relative overflow-hidden particles-bg">
       <div className="absolute inset-0 bg-gradient-to-r from-teal-100/20 to-orange-100/20 animate-pulse"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Badge */}
