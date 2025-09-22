@@ -43,15 +43,15 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           <div className="flex items-center">
             <div className="relative group cursor-pointer">
               {/* Logo background glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
               
               {/* Logo container - Rectangular and simple */}
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20 group-hover:border-teal-400/50 transition-all duration-300 group-hover:scale-105 shadow-lg">
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-xl px-6 py-2 border border-white/20 group-hover:border-teal-400/50 transition-all duration-300 group-hover:scale-105 shadow-lg">
                 
                 <img 
                   src="/Etna_Sans_Serif__1_-removebg-preview.png" 
                   alt="WasabiTel Logo"
-                  className="w-32 h-32 object-contain transition-all duration-300 group-hover:brightness-110 relative z-10"
+                  className="w-24 h-24 object-contain transition-all duration-300 group-hover:brightness-110 relative z-10"
                 />
               </div>
             </div>
@@ -100,10 +100,10 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           <div className="hidden lg:block">
             <button 
               onClick={() => onContactClick()} 
-              className="relative px-8 py-3 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-400 hover:to-orange-400 text-white font-bold rounded-full transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:scale-105 group overflow-hidden"
+              className="relative px-6 py-2.5 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-400 hover:to-orange-400 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group overflow-hidden"
             >
               {/* Button background animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Button text */}
               <span className="relative z-10 flex items-center space-x-2">
@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
               </span>
               
               {/* Animated border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 to-orange-400 opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-500"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 to-orange-400 opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300"></div>
             </button>
           </div>
 
@@ -166,7 +166,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             <div className="mt-6 pt-6 border-t border-white/20">
               <button 
                 onClick={() => onContactClick()} 
-                className="w-full px-6 py-4 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-400 hover:to-orange-400 text-white font-bold rounded-full transition-all duration-300 shadow-lg"
+                className="w-full px-6 py-3 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-400 hover:to-orange-400 text-white font-bold rounded-full transition-all duration-300 shadow-lg"
               >
                 Contratar Ahora
               </button>
