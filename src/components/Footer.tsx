@@ -216,7 +216,7 @@ const Footer: React.FC<FooterProps> = ({ onCallRequestClick }) => {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 slide-up">
               <p className="text-gray-400 text-sm">
-                © 2024 WasabiTel. Todos los derechos reservados.
+                © 2025 WasabiTel. Todos los derechos reservados.
               </p>
               <div className="flex items-center space-x-2 text-xs text-gray-500 hover:text-gray-400 transition-colors duration-300">
                 <Shield className="w-4 h-4" />
