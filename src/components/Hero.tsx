@@ -10,13 +10,6 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
     <section className="bg-gradient-to-br from-gray-50 via-teal-50/30 to-orange-50/30 pt-32 pb-20 relative overflow-hidden particles-bg">
       <div className="absolute inset-0 bg-gradient-to-r from-teal-100/20 to-orange-100/20 animate-pulse"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Badge */}
-        <div className="text-center mb-8 slide-up">
-          <span className="inline-flex items-center bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium bounce-in pulse-glow">
-            ⭐ Líder en Telecomunicaciones
-          </span>
-        </div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="slide-up">
             <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -48,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
                 <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                <div className="ml-auto text-xs text-gray-400 font-mono">wasabitel.es</div>
+                <div className="ml-auto text-xs text-gray-400 font-mono">wasabitel.com</div>
               </div>
               
               {/* Fibra plan */}
