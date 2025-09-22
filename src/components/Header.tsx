@@ -73,6 +73,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             </button>
           </div>
         </div>
+      </div>
       </header>
     </>
   );
