@@ -74,7 +74,6 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           </div>
         </div>
       </header>
-    </header>
     </>
   );
 };
