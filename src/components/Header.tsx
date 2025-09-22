@@ -43,27 +43,56 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           <div className="flex items-center">
             <div className="relative group cursor-pointer">
               {/* Logo background glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-teal-500/20 to-orange-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
+              <div className="absolute -inset-8 bg-gradient-to-r from-teal-500/30 to-orange-500/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
+              
+              {/* Multiple glow layers for depth */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-teal-400/20 to-orange-400/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-80 transition-all duration-500"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-teal-300/15 to-orange-300/15 rounded-xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-300"></div>
               
               {/* Logo container with glassmorphism */}
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/20 group-hover:border-teal-400/50 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+              <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md rounded-3xl p-6 border-2 border-white/30 group-hover:border-teal-400/70 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6 shadow-2xl group-hover:shadow-teal-500/25">
+                {/* Inner glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Pulsing ring effect */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-teal-400/0 group-hover:border-teal-400/50 transition-all duration-700 animate-pulse"></div>
+                
                 <img 
                   src="/Etna_Sans_Serif__1_-removebg-preview.png" 
                   alt="WasabiTel Logo"
-                  className="w-16 h-16 object-contain transition-all duration-700 group-hover:drop-shadow-2xl filter group-hover:brightness-110"
+                  className="w-32 h-32 object-contain transition-all duration-700 group-hover:drop-shadow-2xl filter group-hover:brightness-125 group-hover:contrast-110 relative z-10"
                 />
                 
-                {/* Animated border */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-teal-500 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                {/* Animated rotating border */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-teal-500 via-orange-500 to-teal-500 opacity-0 group-hover:opacity-30 transition-opacity duration-500 animate-spin" style={{animationDuration: '3s'}}></div>
                 
-                {/* Floating particles effect */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-teal-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping" style={{animationDelay: '0.5s'}}></div>
+                {/* Enhanced floating particles effect */}
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-teal-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping"></div>
+                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute -top-2 -left-2 w-3 h-3 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping" style={{animationDelay: '1s'}}></div>
+                <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping" style={{animationDelay: '1.5s'}}></div>
+                
+                {/* Orbiting elements */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-teal-300 rounded-full animate-spin" style={{
+                    transformOrigin: '0 0',
+                    transform: 'translate(-50%, -50%) rotate(0deg) translateX(50px)',
+                    animationDuration: '2s'
+                  }}></div>
+                  <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-orange-300 rounded-full animate-spin" style={{
+                    transformOrigin: '0 0',
+                    transform: 'translate(-50%, -50%) rotate(180deg) translateX(50px)',
+                    animationDuration: '2s'
+                  }}></div>
+                </div>
               </div>
               
               {/* Logo text with gradient */}
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <div className="text-xs font-bold bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent whitespace-nowrap">
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
+                <div className="text-sm font-bold bg-gradient-to-r from-teal-400 via-orange-400 to-teal-400 bg-clip-text text-transparent whitespace-nowrap animate-pulse">
+                  WasabiTel
+                </div>
+                <div className="absolute inset-0 text-sm font-bold text-white/20 blur-sm">
                   WasabiTel
                 </div>
               </div>
