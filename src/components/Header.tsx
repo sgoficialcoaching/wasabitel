@@ -79,5 +79,3 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 };
 
 export default Header;
-  )
-}
