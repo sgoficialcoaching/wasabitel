@@ -1,69 +1,58 @@
 import React from 'react';
+import { Shield, Zap, HeadphonesIcon, Award } from 'lucide-react';
 
-interface HeaderProps {
-  onContactClick: (service?: string) => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+const WhyChoose: React.FC = () => {
+  const reasons = [
+    {
+      icon: Shield,
+      title: 'Máxima Seguridad',
+      description: 'Protección avanzada para todos tus datos y comunicaciones',
+      color: 'text-blue-600'
+    },
+    {
+      icon: Zap,
+      title: 'Velocidad Garantizada',
+      description: 'Conexiones ultrarrápidas que nunca te dejarán esperando',
+      color: 'text-yellow-600'
+    },
+    {
+      icon: HeadphonesIcon,
+      title: 'Soporte 24/7',
+      description: 'Atención técnica especializada disponible las 24 horas',
+      color: 'text-green-600'
+    },
+    {
+      icon: Award,
+      title: 'Calidad Premium',
+      description: 'Servicios de la más alta calidad con tecnología de vanguardia',
+      color: 'text-purple-600'
     }
-  };
+  ];
 
   return (
-    <>
-      {/* Promotional Bar */}
-      <div className="bg-gradient-to-r from-green-500 via-teal-500 to-orange-500 text-white py-3 px-4 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
-          <span className="animate-pulse">🔥</span>
-          <span>PROMOCIONES EXCLUSIVAS SOLO PARA CLIENTES WASABITEL</span>
-          <span className="animate-pulse">🔥</span>
-          <span className="hidden sm:inline ml-4 bg-white/20 px-3 py-1 rounded-full text-xs">
-            ¡APROVECHA AHORA!
-          </span>
-        </div>
-      </div>
-      
-      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
-      {/* Promotional Bar */}
-      <div className="bg-gradient-to-r from-green-500 via-teal-500 to-orange-500 text-white py-3 px-4 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
-          <span className="animate-pulse">🔥</span>
-          <span>PROMOCIONES EXCLUSIVAS SOLO PARA CLIENTES WASABITEL</span>
-          <span className="animate-pulse">🔥</span>
-          <span className="hidden sm:inline ml-4 bg-white/20 px-3 py-1 rounded-full text-xs">
-            ¡APROVECHA AHORA!
-          </span>
-        </div>
-      </div>
-      
-      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-1">
-          <div className="flex items-center">
-            <div className="flex items-center space-x-2">
-              <img 
-                src="/Etna_Sans_Serif__1_-removebg-preview.png" 
-                alt="WasabiTel Logo"
-                className="w-48 h-48 object-contain"
-              />
+        <div className="text-center mb-16">
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            ¿Por qué elegir <span className="bg-gradient-to-r from-teal-600 to-orange-500 bg-clip-text text-transparent">WasabiTel</span>?
+          </h3>
+          <p className="text-gray-600 text-lg">Descubre las ventajas que nos hacen únicos</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {reasons.map((reason, index) => (
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+              <div className={`w-16 h-16 ${reason.color} bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <reason.icon className={`w-8 h-8 ${reason.color}`} />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4 text-center">{reason.title}</h4>
+              <p className="text-gray-600 text-center leading-relaxed">{reason.description}</p>
             </div>
-          </div>
-          
-          <nav className="hidden md:flex space-x-8">
-            <button onClick={() => scrollToSection('fibra')} className="text-gray-700 hover:text-green-600 font-bold transition-all duration-300 hover:scale-105 relative group">
-              Fibra
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('movil')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-105 relative group">
-              Móvil
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <div className="bg-gradient-to-r from-teal-600 to-orange-500 rounded-3xl p-12 text-white text-center relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="relative z-10">
               <h3 className="text-3xl font-bold mb-4">¿Listo para la mejor conexión?</h3>
@@ -74,34 +63,9 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             </div>
           </div>
         </div>
-              Servicios
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('seguridad')} className="text-gray-700 hover:text-red-600 font-bold transition-all duration-300 hover:scale-110 relative group">
-              Seguridad
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('empresa')} className="text-gray-700 hover:text-teal-600 font-bold transition-all duration-300 hover:scale-110 relative group">
-              Empresa
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('contacto')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-110 relative group">
-              Contacto
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-          </nav>
-          
-          <div className="flex items-center space-x-4">
-            <button onClick={() => scrollToSection('login')} className="text-gray-700 hover:text-teal-600 font-bold transition-all duration-300 hover:scale-105">Iniciar Sesión</button>
-            <button onClick={() => onContactClick()} className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-              Contratar Ahora
-            </button>
-          </div>
-        </div>
       </div>
-    </header>
-    </>
+    </section>
   );
 };
 
-export default Header;
+export default WhyChoose;

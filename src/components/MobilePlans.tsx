@@ -1,82 +1,91 @@
 import React from 'react';
+import { Check, Smartphone } from 'lucide-react';
 
-interface HeaderProps {
+interface MobilePlansProps {
   onContactClick: (service?: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+const MobilePlans: React.FC<MobilePlansProps> = ({ onContactClick }) => {
+  const mobilePlans = [
+    {
+      name: 'Móvil Básico',
+      price: '15,95€',
+      features: [
+        '20GB de datos',
+        'Llamadas ilimitadas',
+        'SMS ilimitados',
+        'Roaming UE incluido',
+        'Red 5G'
+      ],
+      serviceId: 'movil-basico',
+      color: 'orange'
+    },
+    {
+      name: 'Móvil Premium',
+      price: '25,95€',
+      features: [
+        '50GB de datos',
+        'Llamadas ilimitadas',
+        'SMS ilimitados',
+        'Roaming UE incluido',
+        'Red 5G',
+        'Netflix incluido'
+      ],
+      serviceId: 'movil-premium',
+      color: 'orange'
     }
-  };
+  ];
 
   return (
-    <>
-      {/* Promotional Bar */}
-      <div className="bg-gradient-to-r from-green-500 via-teal-500 to-orange-500 text-white py-3 px-4 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 flex items-center justify-center space-x-2 text-sm font-bold">
-          <span className="animate-pulse">🔥</span>
-          <span>PROMOCIONES EXCLUSIVAS SOLO PARA CLIENTES WASABITEL</span>
-          <span className="animate-pulse">🔥</span>
-          <span className="hidden sm:inline ml-4 bg-white/20 px-3 py-1 rounded-full text-xs">
-            ¡APROVECHA AHORA!
-          </span>
-        </div>
-      </div>
-      
-      <header className="bg-white shadow-lg border-b-4 border-gradient-to-r from-green-500 to-orange-500">
+    <section id="movil" className="py-20 bg-gradient-to-br from-orange-50 to-red-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-1">
-          <div className="flex items-center">
-            <div className="flex items-center space-x-2">
-              <img 
-                src="/Etna_Sans_Serif__1_-removebg-preview.png" 
-                alt="WasabiTel Logo"
-                className="w-48 h-48 object-contain"
-              />
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-orange-100 text-orange-800 px-6 py-3 rounded-full text-sm font-bold mb-4">
+            <Smartphone className="w-4 h-4 mr-2" />
+            Conectividad móvil
+          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-2">
+            <span className="bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">Móvil</span> - Planes de Telefonía
+          </h3>
+          <p className="text-gray-600 text-lg">La mejor cobertura y velocidad para tu móvil</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {mobilePlans.map((plan, index) => (
+            <div key={index} className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-105 ring-1 ring-gray-200">
+              <div className="bg-gradient-to-br from-orange-600 to-red-600 text-white p-8 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/10"></div>
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+                  <Smartphone className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 relative z-10">{plan.name}</h3>
+                <div className="text-5xl font-bold mb-2 relative z-10">{plan.price}</div>
+                <div className="text-lg opacity-90 font-medium relative z-10">/mes</div>
+              </div>
+              
+              <div className="p-8">
+                <div className="space-y-4 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center">
+                      <Check className="w-6 h-6 text-green-500 mr-4 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <button 
+                  onClick={() => onContactClick(plan.serviceId)} 
+                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Contratar Ahora
+                </button>
+              </div>
             </div>
-          </div>
-          
-          <nav className="hidden md:flex space-x-8">
-            <button onClick={() => scrollToSection('fibra')} className="text-gray-700 hover:text-green-600 font-bold transition-all duration-300 hover:scale-105 relative group">
-              Fibra
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('movil')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-105 relative group">
-              Móvil
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('seguridad')} className="text-gray-700 hover:text-red-600 font-bold transition-all duration-300 hover:scale-110 relative group">
-              Seguridad
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('empresa')} className="text-gray-700 hover:text-teal-600 font-bold transition-all duration-300 hover:scale-110 relative group">
-              Empresa
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection('contacto')} className="text-gray-700 hover:text-orange-600 font-bold transition-all duration-300 hover:scale-110 relative group">
-              Contacto
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-          </nav>
-          
-          <div className="flex items-center space-x-4">
-            <button onClick={() => scrollToSection('login')} className="text-gray-700 hover:text-teal-600 font-bold transition-all duration-300 hover:scale-105">Iniciar Sesión</button>
-            <button onClick={() => onContactClick()} className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-              Contratar Ahora
-            </button>
-          </div>
+          ))}
         </div>
       </div>
-    </header>
-    </>
+    </section>
   );
 };
 
-export default Header;
+export default MobilePlans;
